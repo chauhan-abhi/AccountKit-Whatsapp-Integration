@@ -1,6 +1,8 @@
 package com.example.whatsappverification
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,7 +17,7 @@ import com.facebook.accountkit.ui.LoginType
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        val APP_REQUEST_CODE = 99
+        const val APP_REQUEST_CODE = 99
     }
 
     private var accessToken: AccessToken? = null
@@ -25,6 +27,20 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    fun sendMessage(view: View) {
+        try {
+            val msg = "hi there.this is a test msg"
+            val number = "918527814403"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setPackage("com.whatsapp")
+            intent.data = Uri.parse("http://api.whatsapp.com/send?phone=$number&text=$msg")
+            startActivity(intent)
+        } catch (e: PackageManager.NameNotFoundException) {
+            Toast.makeText(this@MainActivity, "Not installed", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     fun onLoginPhone(view: View) {
         accessToken = AccountKit.getCurrentAccessToken()
         if (accessToken != null) {
@@ -34,6 +50,7 @@ class MainActivity : AppCompatActivity() {
             //Handle new or logged out user
         }
     }
+
     private fun phoneLogin() {
         val intent = Intent(this, AccountKitActivity::class.java)
         val configurationBuilder = AccountKitConfiguration.AccountKitConfigurationBuilder(

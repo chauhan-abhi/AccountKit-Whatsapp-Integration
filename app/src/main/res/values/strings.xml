@@ -11,5 +11,5 @@
     <string name="na">NA</string>
     <string name="action_bar_title_hello">hello</string>
     <string name="log_in_phone_button">Phone Login</string>
-    <string name="log_in_email_button">Email Login</string>
+    <string name="log_in_email_button">Send msg</string>
 </resources>
