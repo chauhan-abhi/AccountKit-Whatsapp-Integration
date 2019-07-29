@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MobileVerification</string>
+    <string name="FACEBOOK_APP_ID">465905090914065</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">b8d5066e3cb7135d0f36e0cb56bd59e6</string>
+    <string name="log_out_button">Log out</string>
+    <string name="error_label">Error</string>
+    <string name="loading_placeholder">Loading&#8230;</string>
+    <string name="user_id_label">Account ID</string>
+    <string name="phone_number_label">Phone Number</string>
+    <string name="email_label">Email</string>
+    <string name="na">NA</string>
+    <string name="action_bar_title_hello">hello</string>
+    <string name="log_in_phone_button">Phone Login</string>
+    <string name="log_in_email_button">Email Login</string>
+</resources>
